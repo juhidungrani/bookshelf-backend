@@ -19,6 +19,7 @@ app.use(require("./router/auth"));
 const PORT = process.env.PORT;
 
 app.get("/", Authenticate, (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials","true");
   res.send(req.rootUser);
 });
 
